@@ -3,10 +3,10 @@ import Svg, { Path } from "react-native-svg";
 import { LinearGradient } from "expo-linear-gradient";
 
 import HomeScreen from "../screens/HomeScreen";
-import TransfersScreen from "../screens/TransfersScreen";
 import WalletScreen from "../screens/WalletScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import MainScreen from "../screens/MainScreen";
+import TransfersNavigator from "./TransfersNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -51,7 +51,7 @@ export default function HomeNavigator() {
       />
       <Tab.Screen
         name="Transfers"
-        component={TransfersScreen}
+        component={TransfersNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Svg
