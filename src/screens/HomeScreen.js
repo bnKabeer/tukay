@@ -10,11 +10,6 @@ export default function HomeScreen() {
               source={require('../../assets/pic.png')}
               style={styles.pic}
             />
-            {/* <Image
-              source={require('./assets/myImage.png')} 
-              style={styles.image}
-            /> */}
-            {/* <Text>SD</Text> */}
           </View>
           <View style={styles.title}>
             <Text style={styles.headingText}>Hi Oracle,</Text>
@@ -26,6 +21,14 @@ export default function HomeScreen() {
               style={styles.pic}
             />
           </View>
+        </View>
+        <View style={styles.cardContainer}>
+          <Image 
+            source={require('../../assets/card.png')}
+            style={styles.pic}
+          />
+        </View>
+        <View style={styles.tools}>
 
         </View>
     </SafeAreaView>
@@ -62,6 +65,13 @@ const styles = StyleSheet.create({
   notification:{
     flex: 1,
     alignItems: 'center',
+  },
+  cardContainer:{
+    alignItems: 'center',
+    alignContent: 'center',
+  },
+  tools:{
+    backgroundColor:  'red,'
   }
 
 
