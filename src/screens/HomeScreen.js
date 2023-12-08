@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet, Image } from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 export default function HomeScreen() {
   return (
@@ -29,7 +29,34 @@ export default function HomeScreen() {
           />
         </View>
         <View style={styles.tools}>
-
+          <TouchableOpacity style={styles.toolContainer}>
+            <Image 
+              source={require('../../assets/send2k.png')}
+              style={styles.picTool}
+            />
+            <Text>Send 2k</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.toolContainer}>
+            <Image 
+              source={require('../../assets/beg2k.png')}
+              style={styles.picTool}
+            />
+            <Text>Beg for 2k</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.toolContainer}>
+            <Image 
+              source={require('../../assets/borrow2k.png')}
+              style={styles.picTool}
+            />
+            <Text>Borrow 2k</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.toolContainer}>
+            <Image 
+              source={require('../../assets/find2k.png')}
+              style={styles.picTool}
+            />
+            <Text>Find 2k</Text> 
+          </TouchableOpacity>
         </View>
     </SafeAreaView>
   );
@@ -38,7 +65,6 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   headerContainer: {
     flexDirection: 'row',
-    // backgroundColor: 'lightblue',
     paddingTop: 42,
     paddingLeft: 4,
     paddingRight: 24,
@@ -71,7 +97,22 @@ const styles = StyleSheet.create({
     alignContent: 'center',
   },
   tools:{
-    backgroundColor:  'red,'
+    flexDirection: 'row',
+    height: 80,
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    marginHorizontal: 20,
+    marginVertical: 10
+  },
+  toolContainer:{
+    flexDirection:  'column',
+    alignContent: 'center',
+    alignItems: 'center',
+  },
+  picTool:{
+    // flex: 1,
+    // alignItems: 'center'
+
   }
 
 
