@@ -127,6 +127,7 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     marginVertical: 10,
+    marginBottom: 80,
   },
   begger: {
     flexDirection: "row",

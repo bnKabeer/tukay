@@ -1,6 +1,7 @@
 import {
   Image,
   ImageBackground,
+  Pressable,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -8,8 +9,13 @@ import {
 } from "react-native";
 import Svg, { Path } from "react-native-svg";
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../Constants/Dimensions";
+import { useContext } from "react";
+import { AuthContext } from "../Context/Context";
+import { useNavigation } from "@react-navigation/native";
 
 export default function ProfileScreen() {
+  const { setToken } = useContext(AuthContext);
+  const navigation = useNavigation();
   return (
     <View
       style={{
@@ -141,27 +147,29 @@ export default function ProfileScreen() {
             style={styles.arrow}
           />
         </View>
-        <View style={[styles.other, styles.logOutCon]}>
-          <View style={styles.otherCon}>
-            <Svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <Path
-                d="M13 21C13 21.553 12.552 22 12 22H8C5.243 22 3 19.757 3 17V7C3 4.243 5.243 2 8 2H12C12.552 2 13 2.447 13 3C13 3.553 12.552 4 12 4H8C6.346 4 5 5.346 5 7V17C5 18.654 6.346 20 8 20H12C12.553 20 13 20.447 13 21ZM20.707 11.293L16.707 7.29297C16.316 6.90197 15.684 6.90197 15.293 7.29297C14.902 7.68397 14.902 8.31603 15.293 8.70703L17.586 11H10C9.448 11 9 11.447 9 12C9 12.553 9.448 13 10 13H17.586L15.293 15.293C14.902 15.684 14.902 16.316 15.293 16.707C15.488 16.902 15.744 17 16 17C16.256 17 16.512 16.902 16.707 16.707L20.707 12.707C21.098 12.316 21.098 11.683 20.707 11.293Z"
-                fill="#FF0F0F"
-              />
-            </Svg>
-            <Text style={[styles.otherTitle, styles.logOut]}>Log out</Text>
+        <Pressable onPress={() => setToken("")}>
+          <View style={[styles.other, styles.logOutCon]}>
+            <View style={styles.otherCon}>
+              <Svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <Path
+                  d="M13 21C13 21.553 12.552 22 12 22H8C5.243 22 3 19.757 3 17V7C3 4.243 5.243 2 8 2H12C12.552 2 13 2.447 13 3C13 3.553 12.552 4 12 4H8C6.346 4 5 5.346 5 7V17C5 18.654 6.346 20 8 20H12C12.553 20 13 20.447 13 21ZM20.707 11.293L16.707 7.29297C16.316 6.90197 15.684 6.90197 15.293 7.29297C14.902 7.68397 14.902 8.31603 15.293 8.70703L17.586 11H10C9.448 11 9 11.447 9 12C9 12.553 9.448 13 10 13H17.586L15.293 15.293C14.902 15.684 14.902 16.316 15.293 16.707C15.488 16.902 15.744 17 16 17C16.256 17 16.512 16.902 16.707 16.707L20.707 12.707C21.098 12.316 21.098 11.683 20.707 11.293Z"
+                  fill="#FF0F0F"
+                />
+              </Svg>
+              <Text style={[styles.otherTitle, styles.logOut]}>Log out</Text>
+            </View>
+            <Image
+              source={require("../../assets/arrow-left-red.png")}
+              style={styles.arrow}
+            />
           </View>
-          <Image
-            source={require("../../assets/arrow-left-red.png")}
-            style={styles.arrow}
-          />
-        </View>
+        </Pressable>
       </View>
     </View>
   );
