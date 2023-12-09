@@ -95,7 +95,7 @@ export default function HomeScreen() {
                   source={require('../../assets/begger3.png')}
                   style={styles.picTool}
                 />
-                <Text>Aisha B</Text>
+                <Text>Aisha</Text>
               </View>
               <View style={styles.begger}>
                 <Image 
@@ -150,13 +150,29 @@ export default function HomeScreen() {
           </ScrollView>
           <View style={styles.addHeader}>
 
-      <Text style={styles.headingText2}>Who you wan beg?</Text>
-      <TouchableOpacity>
-        <Text style={styles.supportingText2}>See all</Text>
-      </TouchableOpacity>
-      </View>
+            <Text style={styles.headingText2}>Latest beggings</Text>
+            <TouchableOpacity>
+              <Text style={styles.supportingText2}>See all</Text>
+            </TouchableOpacity>
+          </View>
+          <View  style={styles.beggingsContainer}>
+            <View  style={styles.latestBeggings}>
+              <View style={styles.beggingCard}>
+                <Image 
+                  source={require('../../assets/txn.png')}
+                  style={styles.cardPic}
+                />
 
+                <View style={styles.cardText}>
+                  <Text style={styles.cardHeading}>Nkechi</Text>
+                  <Text style={styles.cardSupporting}>Use this one buy garri fes.</Text>
+                </View>
+                <Text style={styles.cardAmount}>N2,000 </Text>
+              </View>
+            </View>
+          </View>
         </View>
+
     </SafeAreaView>
   );
 }
@@ -246,7 +262,49 @@ const styles = StyleSheet.create({
     width: 80, 
   },
   mainContainer: {
-    backgroundColor: 'red',
-    marginBottom: 50,
+    // backgroundColor: 'red',
+    marginBottom: 70,
+  },
+  beggingsContainer:{
+    flexDirection: 'column',
+    height: 100,
+    // marginVertical: 50,
+
+
+  },
+  latestBeggings:{
+
+  },
+  beggingCard:{
+    flexDirection: 'row',
+    height: 50,
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    marginVertical: 10,
+    alignContent: 'center',
+    alignItems: 'center',
+    // paddingVertical: 3,
+    // paddingHorizontal: 10
+    justifyContent: 'space-evenly'
+
+
+  },
+  cardPic:{
+    // paddingVertical: 20
+  },
+  cardText:{
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+  },
+  cardHeading:{
+    fontWeight: '600',
+    fontSize: 20
+  },
+  cardSupporting:{
+    fontSize: 15,
+  },
+  cardAmount:{
+    fontWeight: 'bold',
+    fontSize: 22
   }
 });
