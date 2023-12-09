@@ -17,7 +17,7 @@ export default function HomeNavigator() {
         tabBarStyle: {
           backgroundColor: "#03515D",
           marginHorizontal: 10,
-          marginBottom: 20,
+          marginBottom: 10,
           borderRadius: 12,
           position: "absolute",
           height: 80,
