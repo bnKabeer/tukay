@@ -1,9 +1,9 @@
 import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 
 export default function HomeScreen() {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.mainContainer}>
         <View style={styles.headerContainer}>
           <View style={styles.profilePic}>
             <Image 
@@ -58,6 +58,105 @@ export default function HomeScreen() {
             <Text>Find 2k</Text> 
           </TouchableOpacity>
         </View>
+        <View style={styles.addContainer}>
+          <View style={styles.addHeader}>
+
+            <Text style={styles.headingText2}>Who you wan beg?</Text>
+            <TouchableOpacity>
+              <Text style={styles.supportingText2}>See all</Text>
+            </TouchableOpacity>
+          </View>
+          <ScrollView horizontal={true}>
+
+            <View style={styles.addBegger}>
+              <View style={styles.begger}>
+                <Image 
+                  source={require('../../assets/addBeg.png')}
+                  style={styles.picTool}
+                />
+                <Text>Add</Text>
+              </View>
+              <View style={styles.begger}>
+                <Image 
+                  source={require('../../assets/begger1.png')}
+                  style={styles.picTool}
+                />
+                <Text>Altruistic</Text>
+              </View>
+              <View style={styles.begger}>
+                <Image 
+                  source={require('../../assets/begger2.png')}
+                  style={styles.picTool}
+                />
+                <Text>Machina</Text>
+              </View>
+              <View style={styles.begger}>
+                <Image 
+                  source={require('../../assets/begger3.png')}
+                  style={styles.picTool}
+                />
+                <Text>Aisha B</Text>
+              </View>
+              <View style={styles.begger}>
+                <Image 
+                  source={require('../../assets/begger4.png')}
+                  style={styles.picTool}
+                />
+                <Text>Edith</Text>
+              </View>
+              <View style={styles.begger}>
+                <Image 
+                  source={require('../../assets/begger5.png')}
+                  style={styles.picTool}
+                />
+                <Text>Teeblx</Text>
+              </View>
+              <View style={styles.begger}>
+                <Image 
+                  source={require('../../assets/begger1.png')}
+                  style={styles.picTool}
+                />
+                <Text>Ally</Text>
+              </View>
+              <View style={styles.begger}>
+                <Image 
+                  source={require('../../assets/begger2.png')}
+                  style={styles.picTool}
+                />
+                <Text>Y.B</Text>
+              </View>
+              <View style={styles.begger}>
+                <Image 
+                  source={require('../../assets/begger3.png')}
+                  style={styles.picTool}
+                />
+                <Text>Davido</Text>
+              </View>
+              <View style={styles.begger}>
+                <Image 
+                  source={require('../../assets/begger4.png')}
+                  style={styles.picTool}
+                />
+                <Text>Ufot</Text>
+              </View>
+              <View style={styles.begger}>
+                <Image 
+                  source={require('../../assets/begger5.png')}
+                  style={styles.picTool}
+                />
+                <Text>Ufot</Text>
+              </View>
+            </View>
+          </ScrollView>
+          <View style={styles.addHeader}>
+
+      <Text style={styles.headingText2}>Who you wan beg?</Text>
+      <TouchableOpacity>
+        <Text style={styles.supportingText2}>See all</Text>
+      </TouchableOpacity>
+      </View>
+
+        </View>
     </SafeAreaView>
   );
 }
@@ -73,12 +172,11 @@ const styles = StyleSheet.create({
   profilePic:{
     flex: 1,
     alignItems: 'flex-start',
-    paddingTop: 20,
   },
   title:{
     flex: 4,
-    paddingHorizontal: 25,
-
+    marginHorizontal: 10,
+    textAlign: 'justify',
   },
   headingText:{
     color: '#000',
@@ -95,6 +193,7 @@ const styles = StyleSheet.create({
   cardContainer:{
     alignItems: 'center',
     alignContent: 'center',
+    // height: 190,
   },
   tools:{
     flexDirection: 'row',
@@ -110,10 +209,44 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   picTool:{
-    // flex: 1,
-    // alignItems: 'center'
 
+  },
+  addContainer:{
+    flexDirection: 'column',
+    marginHorizontal: 20,
+
+  },
+  addHeader:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+
+  },
+  headingText2:{
+    color: '#000',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  supportingText2:{
+    color: '#03515E',
+    fontSize: 15,
+    fontWeight: 'bold',
+    alignContent: 'center'
+  },
+  addBegger:{
+    marginVertical: 10,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginVertical: 10,
+  
+  },
+  begger: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    width: 80, 
+  },
+  mainContainer: {
+    backgroundColor: 'red',
+    marginBottom: 50,
   }
-
-
 });
