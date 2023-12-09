@@ -152,7 +152,7 @@ export default function LogInScreen() {
 const styles = StyleSheet.create({
   imageBg: {
     width: "100%",
-    height: SCREEN_HEIGHT * 0.7,
+    height: SCREEN_HEIGHT * 0.65,
     alignItems: "center",
   },
   heading: {
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     marginHorizontal: SCREEN_WIDTH * 0.15,
-    marginVertical: SCREEN_WIDTH * 0.028,
+    marginVertical: SCREEN_WIDTH * 0.1,
   },
   service: {
     gap: 5,

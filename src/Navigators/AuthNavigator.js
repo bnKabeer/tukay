@@ -6,7 +6,6 @@ import { SCREEN_HEIGHT } from "../Constants/Dimensions";
 const Stack = createStackNavigator();
 
 export default function AuthNavigator() {
-  console.log(SCREEN_HEIGHT);
   return (
     <Stack.Navigator
       screenOptions={{

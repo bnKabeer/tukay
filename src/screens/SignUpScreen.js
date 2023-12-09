@@ -11,8 +11,11 @@ import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../Constants/Dimensions";
 import Input from "../Components/Input";
 import Button from "../Components/Button";
 import { useNavigation } from "@react-navigation/native";
+import { useContext } from "react";
+import { AuthContext } from "../Context/Context";
 
 export default function SignUpScreen() {
+  const { setToken } = useContext(AuthContext);
   const navigation = useNavigation();
   return (
     <View
@@ -61,7 +64,13 @@ export default function SignUpScreen() {
               </Input>
             </View>
             <View style={styles.logInHere}>
-              <Button>Register now</Button>
+              <Button
+                onPress={() => {
+                  setToken("token");
+                }}
+              >
+                Register now
+              </Button>
               <Pressable onPress={() => navigation.navigate("LogIn")}>
                 <Text style={styles.instead}>Log in here</Text>
               </Pressable>
@@ -96,7 +105,7 @@ export default function SignUpScreen() {
 const styles = StyleSheet.create({
   imageBg: {
     width: "100%",
-    height: SCREEN_HEIGHT * 0.8,
+    height: SCREEN_HEIGHT * 0.75,
     alignItems: "center",
   },
   heading: {
